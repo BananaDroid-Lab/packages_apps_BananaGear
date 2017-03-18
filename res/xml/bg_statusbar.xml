@@ -32,6 +32,12 @@
             android:fragment="com.banana.settings.fragments.NetworkTrafficSettings" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="statusbar_colored_icons"
             android:title="@string/statusbar_colored_icons_title"
             android:summary="@string/statusbar_colored_icons_summary"
