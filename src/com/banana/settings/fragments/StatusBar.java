@@ -49,6 +49,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
+    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -57,6 +58,7 @@ public class StatusBar extends DashboardFragment implements
     private SwitchPreference mBatteryTextCharging;
     private SwitchPreference mOldMobileType;
     private SwitchPreference mShowRoaming;
+    private SwitchPreference mShowFourg;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
 
@@ -101,10 +103,12 @@ public class StatusBar extends DashboardFragment implements
 
         mOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
+        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mOldMobileType);
             prefScreen.removePreference(mShowRoaming);
+            prefScreen.removePreference(mShowFourg);
         } else {
             boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
                     com.android.internal.R.bool.config_useOldMobileIcons);
@@ -159,6 +163,8 @@ public class StatusBar extends DashboardFragment implements
                 Settings.System.USE_OLD_MOBILETYPE, mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -192,6 +198,7 @@ public class StatusBar extends DashboardFragment implements
                     if (!TelephonyUtils.isVoiceCapable(context)) {
                         keys.add(KEY_USE_OLD_MOBILETYPE);
                         keys.add(KEY_SHOW_ROAMING);
+                        keys.add(KEY_SHOW_FOURG);
                     }
 
                     return keys;
