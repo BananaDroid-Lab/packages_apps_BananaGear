@@ -19,4 +19,18 @@
            android:fragment="com.banana.settings.fragments.PowerMenuSettings" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="volume_keys"
+        android:title="@string/hardware_keys_volume_keys_title" >
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="volume_key_cursor_control"
+            android:summary="%s"
+            android:title="@string/volume_key_cursor_control_title"
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values"
+            android:defaultValue="0" />
+    </PreferenceCategory>
 </PreferenceScreen>

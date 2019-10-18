@@ -84,5 +84,12 @@
     <string name="powermenu_soundpanel">Sound Panel</string>
     <string name="powermenu_users">Users</string>
     <string name="powermenu_logout">Logout</string>
-    <string name="powermenu_emergency">Emergency</string>  
+    <string name="powermenu_emergency">Emergency</string>
+
+    <!-- Volume buttons -->
+    <string name="hardware_keys_volume_keys_title">Volume buttons</string>
+    <string name="volume_key_cursor_control_title">Keyboard cursor control</string>
+    <string name="volume_key_cursor_control_off">Disabled</string>
+    <string name="volume_key_cursor_control_on">Volume Up/Down - Cursor Left/Right</string>
+    <string name="volume_key_cursor_control_on_reverse">Volume Up/Down - Cursor Right/Left</string> 
 </resources>
