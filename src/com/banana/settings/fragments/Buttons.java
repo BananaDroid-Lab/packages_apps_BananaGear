@@ -69,6 +69,7 @@ public class Buttons extends DashboardFragment implements
 
     private static final String TAG = "Buttons";
 
+    private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
@@ -363,6 +364,13 @@ public class Buttons extends DashboardFragment implements
 
         // Edge swipe gesture
         updateEdgeSwipeGesturePreference();
+
+        final PreferenceCategory alertSliderCat =
+        (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
+        boolean mAlertSliderAvailable = res.getBoolean(
+            com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable && alertSliderCat != null)
+            prefScreen.removePreference(alertSliderCat);
     }
 
     private static boolean isKeySwapperSupported(Context context) {
