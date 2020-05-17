@@ -37,6 +37,7 @@
     <string name="icons_category_title">Icons</string>
     <string name="network_icons_category_title">Network related icons</string>
     <string name="gestures_title">Gestures</string>
+    <string name="other_category_title">Others</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -235,4 +236,8 @@
     <string name="media_artwork_fade_percent_title">Fade amount for media notification artwork</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for lockscreen media artwork</string>
     <string name="ls_media_artwork_fade_percent_title">Fade amount for lockscreen media artwork</string>
+
+    <!-- Partial screenshot -->
+    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
+    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
 </resources>
