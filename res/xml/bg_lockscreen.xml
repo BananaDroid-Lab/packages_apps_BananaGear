@@ -25,6 +25,12 @@
         android:title="@string/gestures_title">
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fp_success_vibrate_title"
+            android:summary="@string/fp_success_vibrate_summary"
+            android:defaultValue="true" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="auth_ripple_enabled"
             android:title="@string/enable_fingerprint_ripple_effect_title"
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
