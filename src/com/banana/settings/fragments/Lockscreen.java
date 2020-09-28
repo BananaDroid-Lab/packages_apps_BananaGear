@@ -43,8 +43,10 @@ public class Lockscreen extends DashboardFragment implements
 
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String KEY_RIPPLE_EFFECT = "auth_ripple_enabled";
+    private static final String KEY_FP_SUCCESS_VIBRATE = "fingerprint_success_vib";
 
     private Preference mRippleEffect;
+    private Preference mFingerprintVib;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -60,9 +62,11 @@ public class Lockscreen extends DashboardFragment implements
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+        mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mRippleEffect);
+            gestCategory.removePreference(mFingerprintVib);
         }
     }
 
@@ -74,6 +78,8 @@ public class Lockscreen extends DashboardFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUTH_RIPPLE_ENABLED, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FINGERPRINT_SUCCESS_VIB, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -108,6 +114,7 @@ public class Lockscreen extends DashboardFragment implements
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(KEY_RIPPLE_EFFECT);
+                        keys.add(KEY_FP_SUCCESS_VIBRATE);
                     }
                     return keys;
                 }
