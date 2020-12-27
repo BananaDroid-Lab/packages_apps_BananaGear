@@ -29,6 +29,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.ui.PulseSettings;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,10 @@ public class Misc extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+    }
+
+    public static void reset(Context mContext) {
+        PulseSettings.reset(mContext);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
