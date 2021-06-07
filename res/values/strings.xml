@@ -247,4 +247,8 @@
     <string name="keyguard_show_battery_summary">Show a battery bar on the ambient display when charging</string>
     <string name="keyguard_show_battery_always_title">Always show battery bar</string>
     <string name="keyguard_show_battery_always_summary">Always show a battery bar on the ambient display</string>
+
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Data usage</string>
+    <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
 </resources>
