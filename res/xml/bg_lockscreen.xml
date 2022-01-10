@@ -15,6 +15,12 @@
         android:persistent="false" />
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="auth_ripple_enabled"
+        android:title="@string/enable_fingerprint_ripple_effect_title"
+        android:summary="@string/enable_fingerprint_ripple_effect_summary"
+        android:defaultValue="true" />
+
+    <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
         android:title="@string/charging_animation_title"
         android:summary="@string/charging_animation_summary"
