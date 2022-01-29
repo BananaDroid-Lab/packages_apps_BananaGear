@@ -473,4 +473,8 @@
     <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
     <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
     <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
+
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel animation</string>
+    <string name="pixel_navbar_anim_summary">Enable pixel style animation for 3-button navigation bar</string>
 </resources>
