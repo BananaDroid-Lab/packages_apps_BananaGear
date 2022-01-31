@@ -42,6 +42,7 @@
     <string name="gestures_title">Gestures</string>
     <string name="other_category_title">Others</string>
     <string name="notification_category_title">Notifications</string>
+    <string name="spoof_category_title">Spoofing</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -721,4 +722,8 @@
     <string name="weather_icon_pack_info_title">You are not limited to the pre-installed weather icon packages. Search the Google PlayStore with the keyword "chronus icons" and you will find a lot of additional packages.</string>
     <string name="qsweather_settings_title">QuickSettings Weather</string>
     <string name="qsweather_settings_summary">Setup quicksettings weather views</string>
+
+    <!-- Unlimited Photos storage -->
+    <string name="photos_spoof_title">Unlimited Photos storage</string>
+    <string name="photos_spoof_summary">Spoof your device as Pixel XL for the Google Photos app only to provide unlimited storage for backup</string>
 </resources>
