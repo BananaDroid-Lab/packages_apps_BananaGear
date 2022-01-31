@@ -127,6 +127,7 @@
     <string name="other_category_title">Others</string>
     <string name="notification_category_title">Notifications</string>
     <string name="qs_layout_category_title">Tiles layout</string>
+    <string name="spoof_category_title">Spoofing</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -815,4 +816,8 @@
     <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <string name="lockscreen_weather_text_title">Current condition</string>
     <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
+
+    <!-- Unlimited Photos storage -->
+    <string name="photos_spoof_title">Unlimited Photos storage</string>
+    <string name="photos_spoof_summary">Spoof your device as Pixel XL for the Google Photos app only to provide unlimited storage for backup</string>
 </resources>
