@@ -58,6 +58,8 @@ public class QuickSettings extends DashboardFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
     }
 
     @Override
