@@ -8,4 +8,11 @@
     android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Weather settings -->
+    <Preference
+        android:key="omnijaws_settings"
+        android:title="@string/qs_weather_settings_title"
+        android:summary="@string/qs_weather_settings_summary"
+        android:fragment="com.banana.settings.fragments.OmniJawsSettings" />
+
 </PreferenceScreen>
