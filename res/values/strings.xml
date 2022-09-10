@@ -694,4 +694,31 @@
     <!-- Alert Slider Pulse (OnePlus devices) -->
     <string name="alert_slider_pulse_title">Alert slider pulse</string>
     <string name="alert_slider_pulse_summary">Pulse ambient display when changing alert slider position</string>
+
+    <!-- QS Weather Options -->
+    <string name="qs_weather_summary">Configure system weather</string>
+    <string name="qs_weather_hidden">Hide weather</string>
+    <string name="qs_temperature_image_show_scale">Show temp with scale and image</string>
+    <string name="qs_temperature_image_hide_scale">Show temp with image without scale</string>
+    <string name="qs_temperature_show_scale_hide_image">Show temp with scale</string>
+    <string name="qs_temperature_hide_scale_hide_image">Show temp without scale</string>
+    <string name="qs_show_image">Show image</string>
+    <string name="weather_show_all_condition">Show temp with scale, image, and weather condition</string>
+
+    <!-- Launcher Weather Options -->
+    <string name="launcher_weather_title">Launcher weather</string>
+
+    <!-- Launcher Weather Options -->
+    <string name="kg_weather_title">Lockscreen weather</string>
+
+    <!-- Omni weather -->
+    <string name="qs_weather_settings_title">Weather Settings</string>
+    <string name="qs_weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="weather_title">Weather Settings</string>
+    <string name="weather_config_title">Weather service</string>
+    <string name="weather_config_summary">System service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
+    <string name="weather_icon_pack_info_title">You are not limited to the pre-installed weather icon packages. Search the Google PlayStore with the keyword "chronus icons" and you will find a lot of additional packages.</string>
+    <string name="qsweather_settings_title">QuickSettings Weather</string>
+    <string name="qsweather_settings_summary">Setup quicksettings weather views</string>
 </resources>

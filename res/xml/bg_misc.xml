@@ -46,4 +46,11 @@
         android:summary="@string/pulse_settings_summary"
         android:fragment="com.banana.settings.fragments.ui.PulseSettings" />
 
+    <!-- OmniJaws -->
+    <Preference
+        android:key="omnijaws_settings"
+        android:title="@string/qs_weather_settings_title"
+        android:summary="@string/qs_weather_settings_summary"
+        android:fragment="com.banana.settings.fragments.OmniJawsSettings" />
+
 </PreferenceScreen>
