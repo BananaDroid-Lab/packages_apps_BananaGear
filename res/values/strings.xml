@@ -551,4 +551,8 @@
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Game space</string>
+    <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
 </resources>
