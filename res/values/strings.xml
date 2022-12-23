@@ -617,4 +617,8 @@
     <!-- Hide statusbar on lockscreen -->
     <string name="lockscreen_hide_status_bar_title">Hide Statusbar</string>
     <string name="lockscreen_hide_status_bar_summary">When enabled, statusbar will be hidden on lockscreen</string>
+
+    <!-- CustomUI -->
+    <string name="custom_ui_toggle_title">Settings dashboard style</string>
+    <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
 </resources>
