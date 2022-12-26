@@ -25,6 +25,7 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.ThemeUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -48,6 +49,7 @@ public class QuickSettings extends DashboardFragment implements
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
@@ -55,6 +57,9 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mQsPanelStyle;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -95,6 +100,15 @@ public class QuickSettings extends DashboardFragment implements
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
+
+        String qsPanelStyle = Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT));
+
+        mQsPanelStyle = (ListPreference) findPreference(KEY_QS_PANEL_STYLE);
+        index = mQsPanelStyle.findIndexOfValue(qsPanelStyle);
+        mQsPanelStyle.setValue(qsPanelStyle);
+        mQsPanelStyle.setSummary(mQsPanelStyle.getEntries()[index]);
+        mQsPanelStyle.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -107,6 +121,15 @@ public class QuickSettings extends DashboardFragment implements
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
+            return true;
+        } else if (preference == mQsPanelStyle) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mQsPanelStyle.findIndexOfValue((String) newValue);
+            mQsPanelStyle.setValue((String) newValue);
+            mQsPanelStyle.setSummary(mQsPanelStyle.getEntries()[index]);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_PANEL_STYLE, value, UserHandle.USER_CURRENT);
+            updateQsPanelStyle(getActivity());
             return true;
         }
         return false;
@@ -130,11 +153,69 @@ public class QuickSettings extends DashboardFragment implements
                 Settings.System.QS_TILE_ANIMATION_DURATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+        updateQsPanelStyle(mContext);
     }
 
     private void updateAnimTileStyle(int tileAnimationStyle) {
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
+    }
+
+    private static void updateQsPanelStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        int qsPanelStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+
+        String qsPanelStyleCategory = "android.theme.customization.qs_panel";
+        String overlayThemeTarget  = "com.android.systemui";
+        String overlayThemePackage  = "com.android.systemui";
+
+        switch (qsPanelStyle) {
+            case 1:
+              overlayThemePackage = "com.android.system.qs.outline";
+              break;
+            case 2:
+            case 3:
+              overlayThemePackage = "com.android.system.qs.twotoneaccent";
+              break;
+            case 4:
+              overlayThemePackage = "com.android.system.qs.shaded";
+              break;
+            case 5:
+              overlayThemePackage = "com.android.system.qs.cyberpunk";
+              break;
+            case 6:
+              overlayThemePackage = "com.android.system.qs.neumorph";
+              break;
+            case 7:
+              overlayThemePackage = "com.android.system.qs.reflected";
+              break;
+            case 8:
+              overlayThemePackage = "com.android.system.qs.surround";
+              break;
+            case 9:
+              overlayThemePackage = "com.android.system.qs.thin";
+              break;
+            case 10:
+              overlayThemePackage = "com.android.system.qs.twotoneaccenttrans";
+              break;
+            default:
+              break;
+        }
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+        // reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(qsPanelStyleCategory, overlayThemeTarget, overlayThemeTarget);
+
+        if (qsPanelStyle > 0) {
+            mThemeUtils.setOverlayEnabled(qsPanelStyleCategory, overlayThemePackage, overlayThemeTarget);
+        }
     }
 
     @Override
