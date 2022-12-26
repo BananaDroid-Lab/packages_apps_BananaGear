@@ -836,4 +836,8 @@
     <string name="spoof_recent_pixel_summary">Spoof your device as Pixel 8 Pro for our selected Google apps. Turn off when using a real Pixel device</string>
     <string name="spoof_recent_pixel_all_title">Spoof as Pixel 8 Pro for all Google apps</string>
     <string name="spoof_recent_pixel_all_summary">Spoof your device as Pixel 8 Pro for all Google apps. Turn off when using a real Pixel device. May lead to unintended heating or battery drain</string>
+
+    <!-- UI styles -->
+    <string name="theme_customization_ui_style_title">UI Style</string>
+    <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
 </resources>
