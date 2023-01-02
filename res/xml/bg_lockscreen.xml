@@ -45,6 +45,12 @@
         android:dependency="sysui_keyguard_show_battery_bar"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="android.theme.customization.lockscreen_clock_font"
+        android:title="@string/theme_customization_lock_clock_title"
+        android:summary="@string/theme_customization_lock_clock_summary"
+        android:fragment="com.banana.settings.fragments.ui.LockClockFonts"/>
+
     <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title">
