@@ -765,4 +765,8 @@
     <string name="bass_boost">Bass Boost Mode</string>
     <string name="bass_boost_strength_title">Bass Boost strength</string>
     <string name="soft_reverb">Soft Reverb Mode</string>
+
+    <!-- Max visible notification icons -->
+    <string name="max_visible_notification_icons_title">Notification icons</string>
+    <string name="max_visible_notification_icons_summary">Max notification icons visible on statusbar</string>
 </resources>
