@@ -638,4 +638,8 @@
     <string name="text_sample">AaBbCc</string>
     <string name="theme_customization_lock_clock_title">Clock font style</string>
     <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+
+    <!-- Max visible notification icons -->
+    <string name="max_visible_notification_icons_title">Notification icons</string>
+    <string name="max_visible_notification_icons_summary">Max. notification icons visible on statusbar</string>
 </resources>
