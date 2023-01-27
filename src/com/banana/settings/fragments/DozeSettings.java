@@ -39,7 +39,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -50,7 +50,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @SearchIndexable
-public class DozeSettings extends SettingsPreferenceFragment implements
+public class DozeSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "DozeSettings";
@@ -79,10 +79,13 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private SharedPreferences mPreferences;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_doze;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.bg_doze);
-
         Context context = getContext();
         ContentResolver resolver = context.getContentResolver();
 
@@ -273,6 +276,11 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     /**

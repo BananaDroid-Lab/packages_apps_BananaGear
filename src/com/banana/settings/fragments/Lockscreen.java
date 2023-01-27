@@ -60,7 +60,6 @@ public class Lockscreen extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
