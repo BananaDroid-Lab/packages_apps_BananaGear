@@ -371,4 +371,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
     <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
+
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Require unlocking to use sensitive tiles</string>
+    <string name="qstile_requires_unlocking_summary">Ask to unlock lockscreen when using sensitive tiles</string>
 </resources>
