@@ -70,6 +70,7 @@ public class Buttons extends DashboardFragment implements
     private static final String TAG = "Buttons";
 
     private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
+    private static final String BLOCK_ALERT = "block_alert";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
@@ -105,6 +106,7 @@ public class Buttons extends DashboardFragment implements
     private SwitchPreference mCameraLaunch;
     private SwitchPreference mDisableNavigationKeys;
     private SecureSettingSwitchPreference mSwapCapacitiveKeys;
+    private SystemSettingSwitchPreference mAlertBlock;
 
     private Handler mHandler;
 
@@ -369,6 +371,9 @@ public class Buttons extends DashboardFragment implements
         (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
         boolean mAlertSliderAvailable = res.getBoolean(
             com.android.internal.R.bool.config_hasAlertSlider);
+        mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
+        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
+        mAlertBlock.setEnabled(isPocketEnabled);
         if (!mAlertSliderAvailable && alertSliderCat != null)
             prefScreen.removePreference(alertSliderCat);
     }
