@@ -38,12 +38,12 @@
         android:entryValues="@array/status_bar_battery_percent_values"
         android:defaultValue="2" />
 
-    <com.banana.support.preferences.SecureSettingListPreference
-        android:key="qs_tile_shape"
-        android:title="@string/qs_tile_shape"
-        android:entries="@array/qs_tile_shape_entries"
-        android:entryValues="@array/qs_tile_shape_values"
-        android:defaultValue="2" />
+    <Preference
+        android:key="qs_panel_options"
+        android:persistent="false"
+        android:title="@string/qs_panel_options_title"
+        android:summary="@string/qs_panel_options_summary"
+        android:fragment="com.banana.settings.fragments.QSPanelSettings" />
 
     <PreferenceCategory
         android:title="@string/qs_show_brightness_slider_title">
