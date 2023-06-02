@@ -985,4 +985,8 @@
     <string name="rui_style">Realme UI style</string>
     <string name="rising_style">Rising style</string>
     <string name="volume_style_title">Volume panel styles</string>
+
+    <!-- Brightness slider styles -->
+    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
+    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
 </resources>
