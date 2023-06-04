@@ -155,6 +155,8 @@ public class QuickSettings extends DashboardFragment implements
                 Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_DUAL_TONE, 1, UserHandle.USER_CURRENT);
         updateQsPanelStyle(mContext);
     }
 
