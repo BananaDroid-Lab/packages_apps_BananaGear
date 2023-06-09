@@ -989,14 +989,6 @@
     <string name="doze_on_charge_title">Always on when charging</string>
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 
-    <!-- Brightness slider styles -->
-    <string name="brightness_slider_style_title">Brightness slider style</string>
-    <string name="brightness_slider_style_default">Default</string>
-    <string name="brightness_slider_style_filled">Filled</string>
-    <string name="brightness_slider_style_thin">Thin</string>
-    <string name="brightness_slider_style_bang">Bang</string>
-    <string name="brightness_slider_style_acun">Acun</string>
-
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Parallel space</string>
     <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
