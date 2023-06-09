@@ -58,13 +58,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
-    private static final String KEY_QS_UI_STYLE  = "qs_ui_style";
 
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private SystemSettingListPreference mQsStyle;
-    private SystemSettingListPreference mQsUI;
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
@@ -82,7 +80,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
 
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
-        mQsUI = (SystemSettingListPreference) findPreference(KEY_QS_UI_STYLE);
         mCustomSettingsObserver.observe();
 
         mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
@@ -113,17 +110,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_PANEL_STYLE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.QS_UI_STYLE),
-                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_STYLE))) {
-                updateQsStyle(false /*QS UI theme*/);
-            } else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_UI_STYLE))) {
-                updateQsStyle(true /*QS UI theme*/);
+                updateQsStyle();
             }
         }
     }
@@ -136,9 +128,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateAnimTileStyle(value);
             return true;
         } else if (preference == mQsStyle) {
-            mCustomSettingsObserver.observe();
-            return true;
-        } else if (preference == mQsUI) {
             mCustomSettingsObserver.observe();
             return true;
         }
@@ -159,8 +148,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.QS_UI_STYLE, 0, UserHandle.USER_CURRENT);
     }
 
     private void updateAnimTileStyle(int tileAnimationStyle) {
@@ -168,14 +155,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
-    private void updateQsStyle(boolean isQsUI) {
+    private void updateQsStyle() {
         ContentResolver resolver = getActivity().getContentResolver();
 
-        boolean isA11Style = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.QS_UI_STYLE , 1, UserHandle.USER_CURRENT) == 1;
-	if (isQsUI) {
-	    setQsStyle(isA11Style ? "com.android.system.qs.ui.A11" : "com.android.systemui");
-	} else {
         int qsPanelStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT);
 
@@ -214,13 +196,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             default:
               break;
         }
-        }
     }
 
     public void setQsStyle(String overlayName) {
-        boolean isA11Style = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.QS_UI_STYLE , 1, UserHandle.USER_CURRENT) == 1;
-        mThemeUtils.setOverlayEnabled(isA11Style ? "android.theme.customization.qs_ui" : "android.theme.customization.qs_panel", overlayName, "com.android.systemui");
+        mThemeUtils.setOverlayEnabled("android.theme.customization.qs_panel", overlayName, "com.android.systemui");
     }
 
     @Override
