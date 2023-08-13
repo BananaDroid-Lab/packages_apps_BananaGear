@@ -33,6 +33,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.qs.QsHeaderImageSettings;
 import com.banana.support.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
@@ -193,10 +194,9 @@ public class QuickSettings extends DashboardFragment implements
                 Settings.System.QS_TILE_UI_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_DUAL_TONE, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.QS_HEADER_IMAGE, 0, UserHandle.USER_CURRENT);
         updateQsStyle(mContext);
         updateQsPanelStyle(mContext);
+        QsHeaderImageSettings.reset(mContext);
     }
 
     private void updateAnimTileStyle(int tileAnimationStyle) {
