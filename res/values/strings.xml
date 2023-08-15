@@ -60,4 +60,8 @@
     <!-- UI styles -->
     <string name="theme_customization_ui_style_title">UI Style</string>
     <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
+
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
 </resources>
