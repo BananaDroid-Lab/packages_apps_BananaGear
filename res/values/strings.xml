@@ -810,4 +810,8 @@
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix spoof</string>
     <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+
+    <!-- Pif -->
+    <string name="pif_title">Play integrity fix</string>
+    <string name="pif_summary">View current values used to spoof GMS</string>
 </resources>
