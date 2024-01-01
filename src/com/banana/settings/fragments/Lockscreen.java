@@ -32,6 +32,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.banana.OmniJawsClient;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,9 +46,13 @@ public class Lockscreen extends DashboardFragment implements
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String KEY_RIPPLE_EFFECT = "auth_ripple_enabled";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fingerprint_success_vib";
+    private static final String KEY_WEATHER = "lockscreen_weather_enabled";
 
     private Preference mRippleEffect;
     private Preference mFingerprintVib;
+    private Preference mWeather;
+
+    private OmniJawsClient mWeatherClient;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -68,6 +74,10 @@ public class Lockscreen extends DashboardFragment implements
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mFingerprintVib);
         }
+
+        mWeather = (Preference) findPreference(KEY_WEATHER);
+        mWeatherClient = new OmniJawsClient(getContext());
+        updateWeatherSettings();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -80,6 +90,27 @@ public class Lockscreen extends DashboardFragment implements
                 Settings.System.AUTH_RIPPLE_ENABLED, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_WEATHER_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_WEATHER_LOCATION, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_WEATHER_TEXT, 1, UserHandle.USER_CURRENT);
+    }
+
+    private void updateWeatherSettings() {
+        if (mWeatherClient == null || mWeather == null) return;
+
+        boolean weatherEnabled = mWeatherClient.isOmniJawsEnabled();
+        mWeather.setEnabled(weatherEnabled);
+        mWeather.setSummary(weatherEnabled ? R.string.lockscreen_weather_summary :
+            R.string.lockscreen_weather_enabled_info);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateWeatherSettings();
     }
 
     @Override
