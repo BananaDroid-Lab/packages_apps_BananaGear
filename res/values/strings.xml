@@ -35,6 +35,7 @@
     <string name="reset">Reset</string>
 
     <!-- Other categories -->
+    <string name="audio_category_title">Audio</string>
     <string name="icons_category_title">Icons</string>
     <string name="network_icons_category_title">Network related icons</string>
     <string name="gestures_title">Gestures</string>
@@ -843,4 +844,12 @@
     <string name="qs_tile_round">Circle tiles</string>
     <string name="qs_tile_rect">Square tiles</string>
     <string name="qs_tile_mix">Circle &amp; Square tiles</string>
+
+    <!-- Audio Effect Mode -->
+    <string name="audio_effects_title">Audio Effects</string>
+    <string name="audio_effect_mode_title">Audio Effect Mode</string>
+    <string name="dynamic_mode">Dynamic Mode</string>
+    <string name="bass_boost">Bass Boost Mode</string>
+    <string name="bass_boost_strength_title">Bass Boost strength</string>
+    <string name="soft_reverb">Soft Reverb Mode</string>
 </resources>
