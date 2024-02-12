@@ -37,6 +37,7 @@
     <string name="reset">Reset</string>
 
     <!-- Other categories -->
+    <string name="audio_category_title">Audio</string>
     <string name="icons_category_title">Icons</string>
     <string name="network_icons_category_title">Network related icons</string>
     <string name="gestures_title">Gestures</string>
@@ -752,4 +753,12 @@
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Allow application downgrade</string>
     <string name="app_downgrade_summary">This allows you to downgrade applications. Note that this may lead to crashes and data corruption.</string>
+
+    <!-- Audio Effect Mode -->
+    <string name="audio_effects_title">Audio Effects</string>
+    <string name="audio_effect_mode_title">Audio Effect Mode</string>
+    <string name="dynamic_mode">Dynamic Mode</string>
+    <string name="bass_boost">Bass Boost Mode</string>
+    <string name="bass_boost_strength_title">Bass Boost strength</string>
+    <string name="soft_reverb">Soft Reverb Mode</string>
 </resources>
