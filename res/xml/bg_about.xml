@@ -62,6 +62,7 @@
                 android:data="https://t.me/travarilo" />
         </Preference>
 
+<!--
         <Preference
             android:title="@string/banana_about_genkzsz11"
             android:summary="@string/banana_about_genkzsz11_summary"
@@ -81,11 +82,13 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/ATANYTHING" />
         </Preference>
+-->
 
     <PreferenceCategory
         android:key="maintainer_team"
         android:title="@string/banana_maintainer_team" />
 
+<!--
         <Preference
             android:title="@string/banana_about_AbrarNoob"
             android:summary="@string/banana_about_AbrarNoob_summary"
@@ -95,7 +98,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/AbrarNoob" />
         </Preference>
-		
+
         <Preference
             android:title="@string/banana_about_aepranata"
             android:summary="@string/banana_about_aepranata_summary"
@@ -135,7 +138,19 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Vrasteizz" />
         </Preference>
+-->
 
+        <Preference
+            android:title="@string/banana_about_asriadirahim"
+            android:summary="@string/banana_about_asriadirahim_summary"
+            android:icon="@drawable/asriadirahim"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/asriadirahim" />
+        </Preference>
+
+<!--
         <Preference
             android:title="@string/banana_about_Bratasij"
             android:summary="@string/banana_about_Bratasij_summary"
@@ -155,6 +170,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/el_chihua" />
         </Preference>
+-->
 
         <Preference
             android:title="@string/banana_about_Curse"
@@ -175,7 +191,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Djampt" />
         </Preference>
-
+<!--
         <Preference
             android:title="@string/banana_about_elizabethangelalorenza"
             android:summary="@string/banana_about_elizabethangelalorenza_summary"
@@ -195,7 +211,19 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/FPSensor" />
         </Preference>
+-->
 
+        <Preference
+            android:title="@string/banana_about_franlop77"
+            android:summary="@string/banana_about_franlop77_summary"
+            android:icon="@drawable/franlop77"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/franlop77" />
+        </Preference>
+
+<!--
         <Preference
             android:title="@string/banana_about_FrEeRuNnEr4EvEr"
             android:summary="@string/banana_about_FrEeRuNnEr4EvEr_summary"
@@ -205,7 +233,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/FreeRunner4ever" />
         </Preference>
-
+-->
         <Preference
             android:title="@string/banana_about_HonokaKousaka"
             android:summary="@string/banana_about_HonokaKousaka_summary"
@@ -216,6 +244,7 @@
                 android:data="https://t.me/hklknz" />
         </Preference>
 
+<!--
         <Preference
             android:title="@string/banana_about_kibria5"
             android:summary="@string/banana_about_kibria5_summary"
@@ -255,6 +284,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Mrick343" />
         </Preference>
+-->
 
         <Preference
             android:title="@string/banana_about_MweTwo"
@@ -264,6 +294,27 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Pxztt" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_about_Noobbeast"
+            android:summary="@string/banana_about_Noobbeast_summary"
+            android:icon="@drawable/noobbeast"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Noobbeasttt" />
+        </Preference>
+
+<!--
+        <Preference
+            android:title="@string/banana_about_OnFire_Nasir"
+            android:summary="@string/banana_about_OnFire_Nasir_summary"
+            android:icon="@drawable/OnFire_Nasir"
+            settings:layout="@layout/banana_about">                                     
+            <intent                                                                         
+                android:action="android.intent.action.VIEW"                                 
+                android:data="https://t.me/OnFire_Nasir" />                         
         </Preference>
 
         <Preference
@@ -295,7 +346,19 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/RayanWorld1" />
         </Preference>
+-->
 
+        <Preference
+            android:title="@string/banana_about_reache"
+            android:summary="@string/banana_about_banana_about_reache_summary"
+            android:icon="@drawable/reache"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Thereache" />
+        </Preference>
+
+<!--
         <Preference
             android:title="@string/banana_about_REX"
             android:summary="@string/banana_about_REX_summary"
@@ -315,7 +378,29 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Romeo_Delta_Whiskey" />
         </Preference>
+-->
 
+        <Preference
+            android:title="@string/banana_about_kssrao"
+            android:summary="@string/banana_about_kssrao_summary"
+            android:icon="@drawable/kssrao"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/kssrao13882" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_about_tribual"
+            android:summary="@string/banana_about_tribual_summary"
+            android:icon="@drawable/tribual"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/tribual" />
+        </Preference>
+
+<!--
         <Preference
             android:title="@string/banana_about_Namikaze"
             android:summary="@string/banana_about_Namikaze_summary"
@@ -390,31 +475,6 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Noviceyash" />
         </Preference>
-        <Preference
-            android:title="@string/banana_about_franlop77"
-            android:summary="@string/banana_about_franlop77_summary"
-            android:icon="@drawable/franlop77"
-            settings:layout="@layout/banana_about">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/franlop77" />
-        </Preference>
-        <Preference
-            android:title="@string/banana_about_asriadirahim"
-            android:summary="@string/banana_about_asriadirahim_summary"
-            android:icon="@drawable/asriadirahim"
-            settings:layout="@layout/banana_about">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/asriadirahim" />
-        </Preference>
-        <Preference
-            android:title="@string/banana_about_OnFire_Nasir"
-            android:summary="@string/banana_about_OnFire_Nasir_summary"
-            android:icon="@drawable/OnFire_Nasir"
-            settings:layout="@layout/banana_about">                                     
-            <intent                                                                         
-                android:action="android.intent.action.VIEW"                                 
-                android:data="https://t.me/OnFire_Nasir" />                         
-        </Preference>
+-->
+
 </PreferenceScreen>
